@@ -1,0 +1,26 @@
+{
+  "name": "hotel-booking-app",
+  "version": "1.0.0",
+  "description": "Full-stack hotel booking application for Pan India",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "cd backend && npm install",
+    "setup:frontend": "cd frontend && npm install",
+    "db:generate": "cd backend && npx prisma generate",
+    "db:migrate": "cd backend && npx prisma db push",
+    "db:seed": "cd backend && npm run seed",
+    "deploy": "chmod +x deploy.sh && ./deploy.sh"
+  },
+  "keywords": ["hotel", "booking", "nodejs", "react", "prisma", "postgresql"],
+  "author": "Hotel Booking Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
